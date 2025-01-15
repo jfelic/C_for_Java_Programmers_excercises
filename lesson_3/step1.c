@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct Employee {
     char* name;
@@ -17,6 +18,10 @@ struct Employee* new_employee(char* name, int id) {
 }
 
 int main() {
+    int i = 123; // Stores the value 123 somewhere in memory
+    int* i_p = &i; // Initialized to the address in memory of the variable i
+
+    printf("%d\n", *i_p); // Dereference i_p in order to get the value it is pointing at
 
     return 0;
 }
