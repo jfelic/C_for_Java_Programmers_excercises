@@ -13,22 +13,22 @@
 */
 #include <stdio.h>
 
-void stars(int num) {
+void printStars(int num) {
+    printf("Stars:");
     for (int i = 0; i < num; i++) {
         printf(" *");
     }
 }
 
-float f_to_k(int f) {
+float f_to_k(float f) {
 	float k = (((f - 32) * 5) / 9.0) + 273.15;
 	return k;
 }
 
 int main() {
-    printf("Stars:");
-    stars(10);
+    printStars(10);
     printf("\n");
     
-    printf("58 F = %.2f K\n", f_to_k(58));
+    printf("58 F = %.2f K\n", f_to_k(58.0));
     return 0;
 }

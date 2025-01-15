@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(int argc, char* argv[]) {
     char str[256];
 
     printf("Enter lines of text. Enter a blank line to stop.\n");
@@ -14,6 +14,9 @@ int main() {
         fgets(str, 255, stdin); 
         printf("You entered: %s", str);
     } while (str[0] != '\n');
+
+    // fgets(str, 255, stdin);
+    // printf("You entered: %s", str);
 
     return 0;
 }

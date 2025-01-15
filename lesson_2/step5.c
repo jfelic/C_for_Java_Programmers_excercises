@@ -7,7 +7,7 @@
 void display_user_input() {
     int int_num;
     float float_num;
-    char string[50];
+    char string[255];
 
     // Int
     printf("Please enter an integer number: ");
@@ -25,7 +25,7 @@ void display_user_input() {
     printf("The string you entered was: %s\n", string);
 }
 
-int main() {
+int main(int argc, char* argv[]) {
     display_user_input();
     return 0;
 }

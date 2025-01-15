@@ -18,7 +18,7 @@ int copy_file(char* srcfilename, char* dstfilename) {
     // First we open the src file and enable reading
     FILE* src = fopen(srcfilename, "r");
     if (src == NULL) {
-        printf("Error opening src file");
+        printf("Error opening source file");
         return 0;
     }
 
@@ -29,11 +29,11 @@ int copy_file(char* srcfilename, char* dstfilename) {
         return 0;
     }
 
-    while(!feof(src)) {
-        char str[256];
-        if (fgets(str, 255, src) != NULL) {
-            fprintf(dst, "%s", str);
-        }
+    // feof(input_file) returns true if the input file FILE* has been completely read
+    while (!feof(src)) {
+        char str [256];
+        fgets(str, 255, src);
+        fprintf(dst, "%s", str);
     }
 
     fclose(src);
@@ -42,5 +42,14 @@ int copy_file(char* srcfilename, char* dstfilename) {
 }
 
 int main() {
+    // TODO: Test copy_file function
+    int copy_file_success = copy_file("xanadu.txt", "dstfile.txt");
+
+    if (copy_file_success == 0) {
+        printf("copy_file() finished with following return: %d FAILED\n", copy_file_success);  
+    } else {
+        printf("copy_file() finished with following return: %d SUCCESS\n", copy_file_success);  
+    }
     
+    return 0;
 }
