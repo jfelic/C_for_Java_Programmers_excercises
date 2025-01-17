@@ -14,23 +14,27 @@
     are the default behavior of fopen). 
 */
 
-int copy_file(char* srcfilename, char* dstfilename) {
+int copy_file(char* srcfilename, char* dstfilename) 
+{
     // First we open the src file and enable reading
     FILE* src = fopen(srcfilename, "r");
-    if (src == NULL) {
+    if (src == NULL) 
+    {
         printf("Error opening source file");
         return 0;
     }
 
     // Then we open destination file and enable writing
     FILE* dst = fopen(dstfilename, "w");
-    if (dst == NULL) {
+    if (dst == NULL) 
+    {
         printf("Error opening destination file");
         return 0;
     }
 
     // feof(input_file) returns true if the input file FILE* has been completely read
-    while (!feof(src)) {
+    while (!feof(src)) 
+    {
         char str [256];
         fgets(str, 255, src);
         fprintf(dst, "%s", str);
@@ -41,7 +45,8 @@ int copy_file(char* srcfilename, char* dstfilename) {
     return 1; // Return 1 meaning success
 }
 
-int main() {
+int main() 
+{
     // TODO: Test copy_file function
     int copy_file_success = copy_file("xanadu.txt", "dstfile.txt");
 
